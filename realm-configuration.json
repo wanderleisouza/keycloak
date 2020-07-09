@@ -21,6 +21,11 @@
     {
       "username": "jane-doe",
       "enabled": true,
+	  "attributes": {
+            "mobile": [
+              "867-5309"
+            ]
+      },      
       "credentials": [
         {
           "type": "password",
