@@ -1,0 +1,50 @@
+= User Authentication Authorization Service
+:source-highlighter: coderay
+:coderay-linenums-mode: inline
+:toc:
+
+== Keycloak setup instructions
+
+Starts the Keycloak server in the background and exposes the server on port 9191 on the host machine;
+
+[source, shell]
+----
+docker run -p 9191:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin quay.io/keycloak/keycloak:10.0.2
+----
+
+Go to the http://localhost:9191/auth/admin[Keycloak Admin Console] and login with the username and password you created earlier (admin/admin).
+
+To verify that Keycloak container is running execute `docker ps`. The container status should be `UP`:
+
+The following `script` configures a new realm, users and clients in Keycloak (see `realm-configuration.json` file):
+
+NOTE: `directAccessGrantsEnabled` to true gives the client direct access to the user credentials and enables it to exchange them for access token. This is the equivalent of OAuth2 Password Grant
+
+[source, shell]
+----
+sh realm-configuration.sh
+----
+
+== cURL OAuth2 endpoints test
+
+*Grant Type: client_credentials*
+
+[source, shell]
+----
+curl -s -X POST -u "app-mobile:app-mobile123" -d "grant_type=client_credentials" localhost:9191/auth/realms/my-realm/protocol/openid-connect/token
+----
+
+*Grant Type: password*  
+
+[source, shell]
+----
+curl -s -X POST 'localhost:9191/auth/realms/my-realm/protocol/openid-connect/token' \
+ --header 'Content-Type: application/x-www-form-urlencoded' \
+ --data-urlencode 'grant_type=password' \
+ --data-urlencode 'client_id=app-mobile' \
+ --data-urlencode 'client_secret=app-mobile123' \
+ --data-urlencode 'username=jane-doe' \
+ --data-urlencode 'password=jane-doe123'
+----
+
+...and let’s decode the access_token JWT token issued for jane-doe using https://jwt.io.

@@ -1,2 +1,0 @@
-# keycloak
-Keycloak setup instructions

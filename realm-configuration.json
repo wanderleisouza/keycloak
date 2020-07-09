@@ -1,0 +1,37 @@
+{
+  "realm": "my-realm",
+  "enabled": true,
+  "clients": [
+    {
+      "clientId": "app-mobile",
+      "enabled": true,
+      "secret": "app-mobile123",
+      "directAccessGrantsEnabled": true
+    }
+  ],
+  "users": [
+    {
+      "username": "jane-doe",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "jane-doe123"
+        }
+      ]
+    },
+    {
+      "username": "chuck-norris",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "chuck-norris123"
+        }
+      ],
+      "realmRoles": [
+        "admin"
+      ]
+    }    
+  ]
+}
