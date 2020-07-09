@@ -6,7 +6,8 @@
       "clientId": "app-mobile",
       "enabled": true,
       "secret": "app-mobile123",
-      "directAccessGrantsEnabled": true
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": true
     }
   ],
   "users": [

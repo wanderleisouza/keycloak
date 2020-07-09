@@ -18,7 +18,10 @@ To verify that Keycloak container is running execute `docker ps`. The container 
 
 The following `script` configures a new realm, users and clients in Keycloak (see `realm-configuration.json` file):
 
-NOTE: `directAccessGrantsEnabled` to true gives the client direct access to the user credentials and enables it to exchange them for access token. This is the equivalent of OAuth2 Password Grant
+NOTE: Set `directAccessGrantsEnabled` to true gives the client direct access to the user credentials and enables it to exchange them for access token. This is the equivalent of OAuth2 Password Grant flow
+
+NOTE: Set `serviceAccountsEnabled` to true allows the client use direct credentials and enables it to exchange them for access token. This is the equivalent of OAuth2 Client Credentials flow
+
 
 [source, shell]
 ----
