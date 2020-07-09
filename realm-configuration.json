@@ -3,12 +3,19 @@
   "enabled": true,
   "clients": [
     {
-      "clientId": "app-mobile",
+      "clientId": "app-android",
       "enabled": true,
-      "secret": "app-mobile123",
+      "secret": "app-android123",
       "directAccessGrantsEnabled": true,
       "serviceAccountsEnabled": true
-    }
+    },
+    {
+      "clientId": "resource-server",
+      "enabled": true,
+      "secret": "resource-server123",
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": true
+    }    
   ],
   "users": [
     {
@@ -21,6 +28,16 @@
         }
       ]
     },
+    {
+      "username": "john-doe",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "john-doe123"
+        }
+      ]
+    },    
     {
       "username": "chuck-norris",
       "enabled": true,

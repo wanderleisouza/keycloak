@@ -34,7 +34,7 @@ sh realm-configuration.sh
 
 [source, shell]
 ----
-curl -s -X POST -u "app-mobile:app-mobile123" -d "grant_type=client_credentials" localhost:9191/auth/realms/my-realm/protocol/openid-connect/token
+curl -s -X POST -u "app-android:app-android123" -d "grant_type=client_credentials" localhost:9191/auth/realms/my-realm/protocol/openid-connect/token
 ----
 
 *Grant Type: password*  
@@ -44,8 +44,8 @@ curl -s -X POST -u "app-mobile:app-mobile123" -d "grant_type=client_credentials"
 curl -s -X POST 'localhost:9191/auth/realms/my-realm/protocol/openid-connect/token' \
  --header 'Content-Type: application/x-www-form-urlencoded' \
  --data-urlencode 'grant_type=password' \
- --data-urlencode 'client_id=app-mobile' \
- --data-urlencode 'client_secret=app-mobile123' \
+ --data-urlencode 'client_id=app-android' \
+ --data-urlencode 'client_secret=app-android123' \
  --data-urlencode 'username=jane-doe' \
  --data-urlencode 'password=jane-doe123'
 ----
