@@ -51,3 +51,8 @@ curl -s -X POST 'localhost:9191/auth/realms/my-realm/protocol/openid-connect/tok
 ----
 
 ...and let’s decode the access_token JWT token issued for jane-doe using https://jwt.io.
+
+=== All endpoins for testing purposes are available in postman 2.1 collection format
+
+`keycloak.postman_collection.json` file, just download https://www.postman.com/[Postman]  and import the collection file
+
