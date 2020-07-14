@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "ddc0e117-7229-4974-838a-a2ff8567861c",
+		"name": "keycloak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/userinfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0bHMxcWR1aE1OYVhubEthVWUxS093dkhfWGFZRDc3YnJ5UThsWGJQckgwIn0.eyJleHAiOjE1OTQzMzE4MjUsImlhdCI6MTU5NDMzMTUyNSwianRpIjoiZWI3YzVhNjMtNzNiOC00MDlhLThmMDYtZjdkMzk5OGVmMjAwIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MTkxL2F1dGgvcmVhbG1zL215LXJlYWxtIiwic3ViIjoiMmIwYjMzNTQtZDdiZi00YzdjLTk3OWYtMTgyNDkyYjMxMmQ5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYXBwLWFuZHJvaWQiLCJzZXNzaW9uX3N0YXRlIjoiMWExZGRjOWYtOWNjNy00YTQyLTg4N2MtOTllNzVjZjRkZmYyIiwiYWNyIjoiMSIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiamFuZS1kb2UiLCJlbWFpbCI6ImphbmUtZG9lQGdtYWlsLmNvbSJ9.EtBcNlItFwfcvz0w8xJGTosLkEzPa6qjs0em7Bq0A9UxKsRh5JmupLNvCTg_F5-_H0hxqeQtu-u7lAo8t5nLEacI9N4-lyyzHwD_Js6Jdyw6ctvM2LAIhGIQcMDr_zbwFSzqlduT6nHRk6Ecx7z0iMw26jR65tEuoY9oTl_DdwuDenOttsmQGVd4HZ6g2-Izdb-XgyFjIvnIEGnLDAn3iItA1VsujkI1pJr2bmH0ZkB8326BwbpA9_-9pE3y4M7QqiQQC8QNMaAx6N6SC3EqrZJeANptByV9It6Jkwi924gKxG3_zLShcLp1aicp24gPlvkdEoQZFbOIDxcAaPHa8Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9191/auth/realms/my-realm/protocol/openid-connect/userinfo",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"auth",
+						"realms",
+						"my-realm",
+						"protocol",
+						"openid-connect",
+						"userinfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/token (user: Jane-doe)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "app-android",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "app-android123",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "jane-doe",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "jane-doe123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9191/auth/realms/my-realm/protocol/openid-connect/token",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"auth",
+						"realms",
+						"my-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/token (user: john-doe)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "app-android",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "app-android123",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "john-doe",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "john-doe123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9191/auth/realms/my-realm/protocol/openid-connect/token",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"auth",
+						"realms",
+						"my-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/token (user: chuck-norris)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "app-android",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "app-android123",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "chuck-norris",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "chuck-norris123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9191/auth/realms/my-realm/protocol/openid-connect/token",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"auth",
+						"realms",
+						"my-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/token (client: app-android)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "app-android",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "app-android123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9191/auth/realms/my-realm/protocol/openid-connect/token",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"auth",
+						"realms",
+						"my-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/token (client: resource-server)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "resource-server",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "resource-server123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9191/auth/realms/my-realm/protocol/openid-connect/token",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"auth",
+						"realms",
+						"my-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
