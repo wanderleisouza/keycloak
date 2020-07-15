@@ -1,6 +1,10 @@
 {
   "realm": "my-realm",
   "enabled": true,
+  "defaultRoles": [ 
+  		"user", 
+  		"admin" 
+  	],
   "clients": [
     {
       "clientId": "app-android",
@@ -51,9 +55,6 @@
           "type": "password",
           "value": "chuck-norris123"
         }
-      ],
-      "realmRoles": [
-        "admin"
       ]
     }    
   ]
