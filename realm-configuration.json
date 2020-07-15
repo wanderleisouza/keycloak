@@ -1,10 +1,7 @@
 {
   "realm": "my-realm",
   "enabled": true,
-  "defaultRoles": [ 
-  		"user", 
-  		"admin" 
-  	],
+  "defaultRoles": [ "admin" ],
   "clients": [
     {
       "clientId": "app-android",
@@ -24,7 +21,8 @@
   "users": [
     {
       "username": "jane-doe",
-      "enabled": true,
+      "email": "jane-doe@mailserver.com",
+	  "enabled": true,
 	  "attributes": {
             "mobile": [
               "867-5309"
@@ -39,6 +37,7 @@
     },
     {
       "username": "john-doe",
+      "email": "john-doe@mailserver.com",      
       "enabled": true,
       "credentials": [
         {
@@ -49,13 +48,17 @@
     },    
     {
       "username": "chuck-norris",
+      "email": "chuck-norris@mailserver.com",
       "enabled": true,
       "credentials": [
         {
           "type": "password",
           "value": "chuck-norris123"
         }
-      ]
-    }    
+      ],
+	  "clientRoles": {
+        "resource-server": [ "admin" ]
+      }
+    }
   ]
 }
