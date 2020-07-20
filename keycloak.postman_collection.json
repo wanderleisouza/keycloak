@@ -6,6 +6,28 @@
 	},
 	"item": [
 		{
+			"name": "/auth (for simple health check)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9191/auth/",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "/userinfo",
 			"request": {
 				"auth": {
