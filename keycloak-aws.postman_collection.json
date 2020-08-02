@@ -1,0 +1,557 @@
+{
+	"info": {
+		"_postman_id": "f16acaab-ae5b-48e0-97c4-76d09f2aeb80",
+		"name": "keycloak (AWS)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/userinfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJsaFpSMS04MkRXNnF4U1gyaFRWMEFmMGY4bjdnUVVvM3g4ZWFGUy1JRUlVIn0.eyJleHAiOjE1OTY0MDAwNjYsImlhdCI6MTU5NjM5OTc2NiwianRpIjoiOWE4ZjY5NTMtMGU3Zi00MWFkLWIxOGEtMDExYmNmNzUwMmFkIiwiaXNzIjoiaHR0cDovL3FhLWtvbmctaW50ZXJuZXQtYWxiLTExNDkzNjgyMjIuc2EtZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2F1dGgvcmVhbG1zL215LXJlYWxtIiwic3ViIjoiMmIxZjA4NmQtYzQzZi00ZWQ1LTgxOWItMjEwMmIyM2IxMzZlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYXBwLWFuZHJvaWQiLCJzZXNzaW9uX3N0YXRlIjoiNTFkOWRkMTUtNjRlNy00YmIyLWJjMTEtZTJkYmVmYmYxNzVhIiwiYWNyIjoiMSIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiamFuZS1kb2UiLCJlbWFpbCI6ImphbmUtZG9lQG1haWxzZXJ2ZXIuY29tIn0.cIfP_86Gt221ae5NnATAQLoSuG3yhIMCkdfHQDCMKI4SK98g1MVpoMkUsQXd6EOAXDcorde1rOt6I3H0UyIsSIHqIQmqzMg-i5JpC7TRy_f4xeW9lOk-BQuYkVseMB-nl1oB9oncy62NMNoLVuFIXQL9h61NsGrxt8U9t8J860l1joqDMWg7AdyReXNnkh2R47xvXjHQa-6azFxqDHlqrgDWbIrYCbERmpXv9mAzMnobO2hWZTxjTheSD-GHMQEDqccIjIEagGdb4-MqwVDIBoNXAAHJSoz8fPO0HAkbgyej61H7S4DMuASr8KFLsvxZU0UiYCppk5XH1z_nacP9Og",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://qa-kong-internet-alb-1149368222.sa-east-1.elb.amazonaws.com/auth/realms/my-realm/protocol/openid-connect/userinfo",
+					"protocol": "http",
+					"host": [
+						"qa-kong-internet-alb-1149368222",
+						"sa-east-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"my-realm",
+						"protocol",
+						"openid-connect",
+						"userinfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/roles (my-realm)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ5Y0NxbmppanY0aDZHaWEya2IxU3h5V0ZsT3JCdzFVQ0l5ZUZBbVNrMVdFIn0.eyJleHAiOjE1OTYzOTk4NTgsImlhdCI6MTU5NjM5OTc5OCwianRpIjoiMDcwMTZjOGYtOTU1Ni00NDZjLTk4MDYtOTNhMjM3Y2YxOTU4IiwiaXNzIjoiaHR0cDovL3FhLWtvbmctaW50ZXJuZXQtYWxiLTExNDkzNjgyMjIuc2EtZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6Ijk1Y2Y3OWI5LTIxM2YtNDkwNC04NTc3LTc2OWFjZmNhOGRlNSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI0ZjkwMTViOS1hMTI0LTQwZWItODI5YS0wMzk4YWY3ZGQzYjciLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiJ9.N2TPEVlGbGcL6DX2q4k8ea85Fw72ZaDFqS6TuIj8vd5720ofxS8gF0Cu4cFBjr7HHBXvqC96r07OaM2GXOL1qivGOn69lPjfQ5sxI8nEdRgu1Uo5YdQMVEVMnKtpxR7w2prr2un-fAlm-JfyQmiOUeviz40CJl0CbyeKcAlKM3oMqKAaUsh_vG5YrCtBFaGsIKQu4vosxhBsj3u2jmY6GVwdM3BRH9ceGFL5ttCh9esHwzbJ2gmWu0EYj6b6fUZBEhO2lwk_OUCZ2_W6RYbOWgSJEDN9VfXls45IbKTBxrUmyNuHwIXByrkDGXkP3l0cIbmspI_5LtDPM2OiE5wmHA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://qa-kong-internet-alb-1149368222.sa-east-1.elb.amazonaws.com/auth/admin/realms/my-realm/roles/",
+					"protocol": "http",
+					"host": [
+						"qa-kong-internet-alb-1149368222",
+						"sa-east-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"my-realm",
+						"roles",
+						""
+					]
+				},
+				"description": "list my-realm realm roles, you must have a valid admin-cli token"
+			},
+			"response": []
+		},
+		{
+			"name": "/users (my-realm)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZdUpyTXJoNkxzdmhVNUZ3bnY4SEZiUjdLUUM1Q3JoSnMyeXpDelMyQV9JIn0.eyJleHAiOjE1OTQ4MTQyNTIsImlhdCI6MTU5NDgxNDE5MiwianRpIjoiZDkwMjBiYzktNjlmYy00MDBlLTk0YzYtZjhmZmU2ZWM4MDk5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MTkxL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY2NjJlMWIxLWEwYWMtNDE3Mi1iNDRmLWE1ZTkzMjQ4MWM1YyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiIyODE1NTU0Ni0zOWU1LTRiODctYWUzMy0xMmU3ODNkYjI5YzkiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiJ9.Gn3ICp7eL9CNUuDxl0LZJno0Q62nFnWR7NSPddfGQ0Idp_KuVOo8q-oY3H_ASTgy_q1Vf-2lnVWU7IW5nX0khVrz7I2dPD-R_CC---vcDoKJhoI0iqV4ZRO1qwKz7nOj5DB6YMKL2h5wTkErle8HrqXJFVbff9gagl2Jmcd_cclndkSXSm2XcOwotcVJL4Jc1Ih4_GYGx52taa2L_PpsSFmlXbIiH-iKLtTiyTuMEbmBc-pEys5FFq3iLggX6hJje5_54v5KP_uOCzcbFs_YB0kojkqrErdHj7jW0PmUi9f1LO1w1EvPpegceEee_dn75hhOZMR-1kPuvLxijFGbEA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://qa-kong-internet-alb-1149368222.sa-east-1.elb.amazonaws.com/auth/admin/realms/my-realm/users",
+					"protocol": "http",
+					"host": [
+						"qa-kong-internet-alb-1149368222",
+						"sa-east-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"my-realm",
+						"users"
+					]
+				},
+				"description": "list my-realm realm roles, you must have a valid admin-cli token"
+			},
+			"response": []
+		},
+		{
+			"name": "/clients (my-realm)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZdUpyTXJoNkxzdmhVNUZ3bnY4SEZiUjdLUUM1Q3JoSnMyeXpDelMyQV9JIn0.eyJleHAiOjE1OTQ4MTQzNTEsImlhdCI6MTU5NDgxNDI5MSwianRpIjoiZDFkZmM1MzgtMzYwMS00NWUwLWE4ZmUtMDE0MTlhNjA2NmIxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MTkxL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY2NjJlMWIxLWEwYWMtNDE3Mi1iNDRmLWE1ZTkzMjQ4MWM1YyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJlM2MwZTFiOC0yZDMwLTQwOTAtYWQ5Mi0wYjJhNTY2Mzc5NmYiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiJ9.f5KUKKIgFLIaLuYOTj0h71oUsamtj6awy1j8BFsySpaMduSnUZUwbeIF1f-40C_oWqdm4IOgc6p5LN7YgxrAO3169oE5nRfPR6fDu1N-G2ofJz0BLH4vHKVjV4SMdSDaHYq3GEHOFcy-Yy8O87jrExjwKtV870P_p1NNHm83TfGNMBoo3Qm0N7sbyxfe46KZuG9too-abJbps9_0PgVzA3-P14hdsjwDGdomNuXIuXmC7bLWF18b4DAd2T6S4fUxrHhbYrIHpbhD2CgxbvcX62fuv83Rc_d-_g8pGhOmjDWtkXROZpo_O1HoGaLV7fx4ckZ_xriPXbGaephq-uEEvQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://qa-kong-internet-alb-1149368222.sa-east-1.elb.amazonaws.com/auth/admin/realms/my-realm/clients",
+					"protocol": "http",
+					"host": [
+						"qa-kong-internet-alb-1149368222",
+						"sa-east-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"my-realm",
+						"clients"
+					]
+				},
+				"description": "list my-realm realm roles, you must have a valid admin-cli token"
+			},
+			"response": []
+		},
+		{
+			"name": "/admin/users (my-realm:resource-server)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ5Y0NxbmppanY0aDZHaWEya2IxU3h5V0ZsT3JCdzFVQ0l5ZUZBbVNrMVdFIn0.eyJleHAiOjE1OTYzOTk3MDgsImlhdCI6MTU5NjM5OTY0OCwianRpIjoiYTZjMDEyMTAtZWE0ZS00NDNkLWExM2UtM2YxMDZhZmI0ZjMyIiwiaXNzIjoiaHR0cDovL3FhLWtvbmctaW50ZXJuZXQtYWxiLTExNDkzNjgyMjIuc2EtZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6Ijk1Y2Y3OWI5LTIxM2YtNDkwNC04NTc3LTc2OWFjZmNhOGRlNSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJiZjMyOWZlNS00MGUyLTRhOWItOGJjMC1kN2I0YTIwODVlMjIiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiJ9.CG7D3DZmKo3yvUhcQpkvd-tLBfTdArQvrrg3b6XaoNMeei73lbq_6-y4mHdaRo8cb-KIYM9avwm1vh2G-CeBtGARiXRXq8KExtCapBaX8SzsxVjA9mWxM9X770Ogul-01gdrj8hGfBI1X59Fw0YFuZrAxoYQI5iOZn9zKhMEoElDhiHBiC3H9ALkrtVc9DXBwf53BYWguafsCDbJVETVE_GzUrdLzuBusHTGsNqBrSHhOt6czCCi5Fdiugl_oFjVMlKynBuHt8Ugiwpl8heo4tLG0fM8-RPpB21iErzikU35Ua3QDdWf9ORR0A2yzutwaDzQtaukjhQ7bHjCO-DTvA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://qa-kong-internet-alb-1149368222.sa-east-1.elb.amazonaws.com/auth/admin/realms/my-realm/clients/9b2a033d-29cb-4d41-8308-420831130dc3/roles/admin/users",
+					"protocol": "http",
+					"host": [
+						"qa-kong-internet-alb-1149368222",
+						"sa-east-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"my-realm",
+						"clients",
+						"9b2a033d-29cb-4d41-8308-420831130dc3",
+						"roles",
+						"admin",
+						"users"
+					]
+				},
+				"description": "list my-realm realm roles, you must have a valid admin-cli token"
+			},
+			"response": []
+		},
+		{
+			"name": "/token (realms/master:admin-cli)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "admin-cli",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "wwqesf1m357pfvm$$!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://qa-kong-internet-alb-1149368222.sa-east-1.elb.amazonaws.com/auth/realms/master/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"qa-kong-internet-alb-1149368222",
+						"sa-east-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"master",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/token (user: Jane-doe)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "app-android",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "app-android123",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "jane-doe",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "jane-doe123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://qa-kong-internet-alb-1149368222.sa-east-1.elb.amazonaws.com/auth/realms/my-realm/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"qa-kong-internet-alb-1149368222",
+						"sa-east-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"my-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/token (user: john-doe)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "app-android",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "app-android123",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "john-doe",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "john-doe123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://qa-kong-internet-alb-1149368222.sa-east-1.elb.amazonaws.com/auth/realms/my-realm/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"qa-kong-internet-alb-1149368222",
+						"sa-east-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"my-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/token (user: chuck-norris)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "app-android",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "app-android123",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "chuck-norris",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "chuck-norris123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://qa-kong-internet-alb-1149368222.sa-east-1.elb.amazonaws.com/auth/realms/my-realm/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"qa-kong-internet-alb-1149368222",
+						"sa-east-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"my-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/token (client: app-android)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "app-android",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "app-android123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://qa-kong-internet-alb-1149368222.sa-east-1.elb.amazonaws.com/auth/realms/my-realm/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"qa-kong-internet-alb-1149368222",
+						"sa-east-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"my-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/token (client: resource-server)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "resource-server",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "resource-server123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://qa-kong-internet-alb-1149368222.sa-east-1.elb.amazonaws.com/auth/realms/my-realm/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"qa-kong-internet-alb-1149368222",
+						"sa-east-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"my-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d2fc3174-314b-4f4e-b782-702faa2ede14",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "06eccc0e-02b6-4772-8fcb-1fa515019810",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
